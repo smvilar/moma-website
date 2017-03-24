@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: 'cheap-eval-source-map',
+  devtool: 'eval-source-map',
   entry: './index.js',
   output: {
     filename: 'bundle.js',
@@ -14,4 +14,13 @@ module.exports = {
       template: 'assets/index.ejs',
     }),
   ],
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+      },
+    }],
+  },
 };
