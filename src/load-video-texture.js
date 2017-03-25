@@ -7,7 +7,7 @@ import {
   VideoTexture,
 } from 'three';
 
-export default function loadVideoTexture(src) {
+export default function load(src) {
   return new Promise((resolve) => {
     // Create video element
     const videoEl = document.createElement('video');

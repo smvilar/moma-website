@@ -12,11 +12,12 @@ export default function createScene() {
       plane.timestamp = Date.now();
 
       scene.add(plane);
-      console.debug(`Added plane with id: ${plane.id}, count: ${scene.children.length}`);
 
       setTimeout(() => {
         scene.remove(plane);
-        console.debug(`Removed plane with id: ${plane.id}, count: ${scene.children.length}`);
+        plane.geometry.dispose();
+        plane.material.map.dispose();
+        plane.material.dispose();
       }, LIFESPAN);
     });
   }

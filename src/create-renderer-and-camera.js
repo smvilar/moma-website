@@ -6,6 +6,7 @@ import {
 export default function createRendererAndCamera() {
   // Create renderer and attach it to the DOM
   const renderer = new WebGLRenderer();
+  renderer.setPixelRatio(window.devicePixelRatio);
   document.body.appendChild(renderer.domElement);
 
   // Create the main camera

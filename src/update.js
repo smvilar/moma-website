@@ -1,4 +1,4 @@
-export const LIFESPAN = 10 * 1000;
+export const LIFESPAN = 6 * 1000;
 
 // const debug = (obj, f) => console.debug(f);
 
@@ -15,22 +15,23 @@ const rotateInZ = (obj) => {
 
 const zoomIn = (obj, f) => obj.scale.set(2 * f, 2 * f, 1);
 const zoomInFrenzy = (obj, f) => zoomIn(obj, (f * 10) % 1);
-const fullscreen = obj => obj.scale.set(4, 4, 1);
+
+const fullscreen = (obj) => {
+  obj.position.z = -1;
+  obj.scale.set(4, 4, 1);
+};
+
+const falling = (obj, f) => {
+  obj.position.set(f > 0.5 ? 3 : -3, 2 - (5 * ((f % 0.5) * 2)), 0);
+};
 
 const behaviors = [
   rotateInX,
   rotateInZ,
-  rotateInZ,
-  rotateInZ,
-  zoomIn,
-  zoomIn,
   zoomIn,
   zoomInFrenzy,
-  zoomInFrenzy,
   fullscreen,
-  fullscreen,
-  fullscreen,
-  fullscreen,
+  falling,
 ];
 
 export default function update(scene) {
