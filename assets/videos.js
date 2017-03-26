@@ -1,5 +1,12 @@
 import sample from 'lodash/sample';
 
+const moma = [
+  '26gR1MmYcPooH67Re',
+  'l4FGAmYy959zfsb9S',
+  '3oKIPyK3dZpNQxqcOQ',
+  'xUPGcJnhtuBbbhzFza',
+];
+
 const ids = [
   'pDZlSIvudnln2',
   'lifYEhPB0YiNq',
@@ -258,4 +265,12 @@ export default function getRandomVideo(hint = '') {
   }
 
   return toVideo(sample(ids));
+}
+
+let currentMomaIdx = 0;
+
+export function getMomaVideo() {
+  const video = toVideo(moma[currentMomaIdx]);
+  currentMomaIdx = (currentMomaIdx + 1) % moma.length;
+  return video;
 }
