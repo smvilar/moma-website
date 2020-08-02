@@ -1,9 +1,8 @@
 import Stats from 'stats.js';
-import createScene from './src/create-scene';
-import createRendererAndCamera from './src/create-renderer-and-camera';
-import update from './src/update';
-
-import Detector from './src/detector';
+import createScene from './create-scene';
+import createRendererAndCamera from './create-renderer-and-camera';
+import update from './update';
+import Detector from './detector';
 
 function main() {
   const { renderer, camera } = createRendererAndCamera();
