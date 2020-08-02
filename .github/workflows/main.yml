@@ -33,4 +33,5 @@ jobs:
         keep_history: true
         build_dir: ./dist
         jekyll: false
-
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
