@@ -21,8 +21,7 @@ export function load(src) {
         ClampToEdgeWrapping,
         ClampToEdgeWrapping,
         NearestFilter,
-        NearestFilter,
-      ));
+        NearestFilter));
     }
 
     videoEl.addEventListener('canplay', onCanPlay);

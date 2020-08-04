@@ -17,15 +17,13 @@ function getRandomColor() {
 const geometry = new BoxBufferGeometry(5, 5, 0.05);
 
 export function createVideo() {
-  return load(getRandomVideo()).then(map =>
-    new Mesh(
-      geometry,
-      new MeshBasicMaterial({
-        color: getRandomColor(),
-        map,
-      }),
-    ),
-  );
+  return load(getRandomVideo()).then((map) => new Mesh(
+    geometry,
+    new MeshBasicMaterial({
+      color: getRandomColor(),
+      map,
+    }),
+  ));
 }
 
 export function disposeVideo(plane) {
