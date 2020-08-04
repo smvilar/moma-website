@@ -4,18 +4,20 @@ import createRendererAndCamera from './create-renderer-and-camera';
 import update from './update';
 import Detector from './detector';
 
+const isDev = process.env.NODE_ENV === 'development';
+
 function main() {
   const { renderer, camera } = createRendererAndCamera();
   const scene = createScene();
 
-  const stats = new Stats();
-  document.body.appendChild(stats.dom);
+  const stats = isDev ? new Stats() : null
+  if (stats) document.body.appendChild(stats.dom);
 
   function render() {
-    stats.begin();
+    if (stats) stats.begin();
     renderer.render(scene, camera);
     update(scene);
-    stats.end();
+    if (stats) stats.end();
   }
 
   function loop() {
