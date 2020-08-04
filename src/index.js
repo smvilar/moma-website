@@ -1,4 +1,7 @@
 import Stats from 'stats.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 import createScene from './create-scene';
 import createRendererAndCamera from './create-renderer-and-camera';
 import update from './update';
@@ -16,12 +19,16 @@ function main() {
   const { renderer, camera } = createRendererAndCamera();
   const scene = createScene();
 
+  const composer = new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene, camera));
+  composer.addPass(new GlitchPass());
+
   const stats = isDev ? new Stats() : null;
   if (stats) document.body.appendChild(stats.dom);
 
   function render() {
     if (stats) stats.begin();
-    renderer.render(scene, camera);
+    composer.render();
     update(scene);
     if (stats) stats.end();
   }
