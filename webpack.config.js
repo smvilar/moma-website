@@ -15,8 +15,7 @@ module.exports = {
   },
   output: {
     filename: './bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: 'static',
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -27,8 +26,5 @@ module.exports = {
         { from: 'static' }
       ]
     })
-  ],
-  devServer: {
-    contentBase: 'dist'
-  }
+  ]
 };

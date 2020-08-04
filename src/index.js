@@ -63,7 +63,7 @@ function setupSongList() {
 }
 
 function setupAudioPlayer() {
-  const audio = document.querySelector('audio');
+  const audio = appendElement('audio', document.body);
   audio.onended = nextSong;
   playSong(songIndex);
 }
@@ -75,8 +75,8 @@ function nextSong() {
 function playSong(index) {
   songIndex = index;
   const audio = document.querySelector('audio');
+  audio.autoplay = true;
   audio.src = songUrls[songIndex];
-  audio.play();
 
   const buttons = document.querySelectorAll('ol button');
   buttons.forEach((button, index) => {
