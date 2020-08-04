@@ -76,6 +76,7 @@ function playSong(index) {
   songIndex = index;
   const audio = document.querySelector('audio');
   audio.src = songUrls[songIndex];
+  audio.play();
 
   const buttons = document.querySelectorAll('ol button');
   buttons.forEach((button, index) => {

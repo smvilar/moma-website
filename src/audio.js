@@ -1,5 +1,3 @@
-const root = 'http://momatheband.com/myd/mp3/';
-
 const songs = [
   { url: 'Obvio.mp3', name: 'Obvio' },
   { url: 'Dystopictures.mp3', name: 'Dystopictures' },
@@ -14,4 +12,4 @@ const songs = [
 
 export const songNames = songs.map(({ name }) => name);
 
-export const songUrls = songs.map(({ url }) => `${root}${url}`);
+export const songUrls = songs.map(({ url }) => `./${url}`);
