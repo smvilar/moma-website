@@ -21,7 +21,7 @@
     "eslint-import-resolver-webpack": "^0.12.2",
     "eslint-plugin-import": "^2.22.0",
     "html-webpack-plugin": "^4.3.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "stats.js": "^0.17.0",
     "three": "^0.119.1",
     "webpack": "^4.44.1",
