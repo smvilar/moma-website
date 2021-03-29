@@ -1,9 +1,8 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  mode: 'production',
   module: {
     rules: [{
       test: /\.js$/,
@@ -15,7 +14,6 @@ module.exports = {
   },
   output: {
     filename: './bundle.js',
-    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -23,8 +21,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'static' }
-      ]
-    })
-  ]
+        { from: 'static' },
+      ],
+    }),
+  ],
 };
