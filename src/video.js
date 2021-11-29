@@ -16,12 +16,14 @@ export function load(src) {
     function onCanPlay() {
       videoEl.removeEventListener('canplay', onCanPlay);
 
-      resolve(new VideoTexture(videoEl,
+      resolve(new VideoTexture(
+        videoEl,
         UVMapping,
         ClampToEdgeWrapping,
         ClampToEdgeWrapping,
         NearestFilter,
-        NearestFilter));
+        NearestFilter,
+      ));
     }
 
     videoEl.addEventListener('canplay', onCanPlay);

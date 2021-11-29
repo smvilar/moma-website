@@ -58,7 +58,7 @@ function setupSongList() {
     const li = appendElement('li', ol);
     const button = appendElement('button', li);
     button.textContent = name;
-    button.onclick = () => { playSong(index); }
+    button.onclick = () => { playSong(index); };
   });
 }
 
@@ -85,5 +85,5 @@ function playSong(index) {
     } else {
       button.classList.remove('playing');
     }
-  })
+  });
 }

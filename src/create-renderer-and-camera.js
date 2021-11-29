@@ -10,9 +10,7 @@ export default function createRendererAndCamera() {
   document.body.appendChild(renderer.domElement);
 
   // Create the main camera
-  const camera = new PerspectiveCamera(
-    75, 1.3, 0.1, 1000,
-  );
+  const camera = new PerspectiveCamera(75, 1.3, 0.1, 1000);
 
   camera.position.set(0, 0, 5);
 
